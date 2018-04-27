@@ -1,0 +1,77 @@
+﻿@model _60331_1_Volodko.DAL.Car
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div class="form-horizontal">
+    <h4>Автомобиль</h4>
+    <hr />
+    <div class="form-group">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.CarBrand)
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.CarBrand)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.CarModel)
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.CarModel)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.EngineCapacity)
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.EngineCapacity)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Cost)
+        </div>
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Cost)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Image)
+        </div>
+        <div class="col-md-10">
+            @if (Model.MimeType == null)
+            {<p>Нет изображения</p>}
+            else
+            { <img width="150" height="150" src="@Url.Action("GetImage", "Car", new {id=Model.CarId })" class="img-thumbnail">}
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Удалить" class="btn btn-danger" />
+                @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+</div>

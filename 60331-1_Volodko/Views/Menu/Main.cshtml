@@ -1,0 +1,10 @@
+﻿@model IEnumerable<_60331_1_Volodko.Models.MenuItem>
+
+<div class="nav navbar-nav">
+    <ul class="nav navbar-nav">
+        @foreach (var item in Model)
+        {
+            <li class="@item.Active">@Html.ActionLink(item.Name, item.Action, item.Controller)</li>
+        }
+    </ul>
+</div>

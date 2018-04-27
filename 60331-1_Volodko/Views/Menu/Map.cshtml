@@ -1,0 +1,10 @@
+﻿@model IEnumerable<_60331_1_Volodko.Models.MenuItem> 
+<h4>Карта сайта</h4>
+<div class="row">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(item.Name, item.Action,item.Controller)</li>
+        }
+    </ul>
+</div>

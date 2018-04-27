@@ -1,0 +1,41 @@
+﻿body{
+    background: #eee;
+}
+
+.navbar .divider-vertical {
+    height: 50px;
+    margin: 0 9px;
+    border-left: 1px solid #222;
+    border-right: 1px solid #111;
+}
+
+#footer {
+    background: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 100px;
+    border-bottom: 1px solid #eee;
+}
+
+.footer {
+    border-top: 1px solid #efefef;
+    margin-top: 50px;
+}
+
+.item-row {
+    margin: 5px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.item-description {
+    height:100px;
+    overflow:auto;
+}
+
+.car-item {
+    margin-bottom: 30px;
+}

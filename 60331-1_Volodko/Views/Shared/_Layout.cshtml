@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/bundles/styles")
+    @RenderSection("Styles", false)
+</head>
+<body>
+    <!--Заголовок страницы-->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">VOLODKO</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="container">
+                    <!-- Панель навигации -->
+                    @Html.Action("Main", "Menu", new { c = Request.RequestContext.RouteData.Values["controller"], })
+                    <!-- Конец Панель навигации -->
+                    <!-- Панель аутентификации -->
+                    @Html.Action("UserInfo", "Menu")
+                    <!-- Конец Панель аутентификации -->
+                </div>
+                <div class="container">
+                    <!-- Панель корзины -->
+                    @Html.Action("Basket", "Menu")
+                    <!-- Конец Панель корзины -->
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--Заголовок страницы(конец)-->
+    <!--Содержимое сайта-->
+    <div class="main-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-3">
+                    <h2>@ViewBag.Caption</h2>
+                </div>
+            </div>
+            <div class="row">
+
+                <!--Левая боковая панель-->
+                <div class="col-md-3">
+                    @*@Html.Action("Side", "Menu")*@
+                    @RenderSection("SidePanel", required: false)
+                </div>
+                <!--/Левая боковая панель (конец)-->
+                <!--Основная панель-->
+                <div class="col-md-9">
+                    @RenderBody()
+                </div><!--/Основная панель (конец)-->
+            </div>
+        </div>
+    </div><!--Содержимое сайта (конец)-->
+    <!--Подвал страницы-->
+    <footer class="section" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    @Html.Action("Map", "Menu")
+                </div>
+                <div class="col-sm-2">
+                    <h4>Lorem ipsum dolor</h4>
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <h4>Lorem ipsum dolor</h4>
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <p><br /></p>
+                    <div class="row">
+                        <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                            <a href="https://www.vk.com"><i class="fa fa-3x fa-fw fa-vk text-inverse"></i></a>
+                            <a href="https://www.twitter.com"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                            <a href="https://www.facebook.com"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 hidden-xs text-right">
+                            <a href="https://www.vk.com"><i class="fa fa-3x fa-fw fa-vk text-primary"></i></a>
+                            <a href="https://twitter.com"><i class="fa fa-3x fa-fw fa-twitter text-primary"></i></a>
+                            <a href="https://www.facebook.com"><i class="fa fa-3x fa-facebook fa-fw text-primary"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-8">
+                    <a href="#"><img alt="VOLODKO" src="~/Images/logo/brand.png"></a>
+                    <span>Виталий Володько 2018</span>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        @*<div class="col-md-12 text-right">
+                                <!-- Yandex.Metrika informer -->
+                                <a href="https://metrika.yandex.by/stat/?id=40565770&amp;from=informer" target="_blank" rel="nofollow"><img title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" src="https://informer.yandex.ru/informer/40565770/3_0_539AD7FF_337AB7FF_1_pageviews" data-lang="ru" data-cid="40565770"></a>
+                                <!-- /Yandex.Metrika informer -->
+                                <a href="https://bezumkin.ru"><img alt="tickets" src="https://bezumkin.ru/inc/img/icons/tickets-power-white.png"></a>
+                                <a href="https://modx.com"><img alt="Modx" src="/assets/cache_image/logo/modx-logo-light_0x0_eb0.jpg"></a>
+                                <a href="https://unrealengine.com"><img alt="Unreal Engine 4" src="/assets/cache_image/logo/unreal_0x0_eb0.jpg"></a>
+                                <a href="http://wssids.by"><img alt="Riders" src="/assets/cache_image/logo/Riders_logo_0x0_eb0.jpg"></a>
+                            </div>*@
+                    </div>
+                    <br>
+                </div>
+            </div>
+            @*<div class="row">
+                    <div class="col-lg-8">
+
+                    </div>
+                    <div class="col-lg-4">
+                        <p>©2018 volodko</p>
+                    </div>
+                </div>*@
+        </div>
+    </footer>
+
+    <!--Подвал страницы (конец)-->
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("Scripts", false)
+</body>
+</html>

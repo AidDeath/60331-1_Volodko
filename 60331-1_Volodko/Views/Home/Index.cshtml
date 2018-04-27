@@ -1,0 +1,82 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section SidePanel
+{
+    @Html.Action("Side", "Menu")
+}
+
+
+<h2>Список</h2>
+<ol type="A">
+    @for (int i = 1; i <= 2; i++)
+    {
+        <li>Элемент @i списка </li>
+    }
+</ol>
+
+<hr />
+<h2>Форма</h2>
+@using (Html.BeginForm("", "Home", FormMethod.Get, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-3">
+            <div class="dropdown">
+                @Html.DropDownList("Colors", (IEnumerable<SelectListItem>)ViewBag.Colors, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-3">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBox("checkbox1")
+                    Чек-бокс 1
+                </label>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-3">
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBox("checkbox2")
+                    Чек-бокс 2
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-3">
+            <label class="radio-inline">
+                @Html.RadioButton("optionsRadios", "option1", true)
+                Радио-1
+            </label>
+            <label class="radio-inline">
+                @Html.RadioButton("optionsRadios", "option2")
+                Радио-2
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("login", "Логин", new { @class = "col-md-3 control-label" })
+        <div class="col-md-8">
+            @Html.TextBox("login", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("password", "Пароль", new { @class = "col-md-3 control-label" })
+        <div class="col-md-8">
+            @Html.Password("password", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-3">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </div>
+    </div>
+}
+

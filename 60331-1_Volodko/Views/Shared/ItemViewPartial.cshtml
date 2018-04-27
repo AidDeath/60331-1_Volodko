@@ -1,0 +1,31 @@
+﻿@model _60331_1_Volodko.DAL.Car
+
+    <div class='car-item col-md-12'>
+        <div class="thumbnail">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="caption">
+                        <div class="item-name">
+                            <h3>@Model.CarBrand <small>@Model.CarModel</small></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="@Url.Action("getImage",new {id=Model.CarId })" class="img img-responsive" resource='#' alt='@Model.CarModel' />
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="caption">
+                                <p>@Model.Description</p>
+                                <hr />
+                                <p><strong>Объем двигателя:</strong> @Model.EngineCapacity см<sup>3</sup></p>
+                                <p><strong>Цена:</strong> @Model.Cost $</p>
+                                <a href=@Url.Action("AddToCart", "Cart", new {id=Model.CarId, returnUrl=Request.Path} ) class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> В корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>

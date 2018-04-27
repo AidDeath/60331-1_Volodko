@@ -1,0 +1,65 @@
+﻿@model IEnumerable<_60331_1_Volodko.DAL.Car>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarBrand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EngineCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(@Html.DisplayFor(model => item.CarBrand).ToString(), "Edit", new { id = item.CarId })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EngineCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @if (item.MimeType == null)
+            {<p>Нет изображения</p>}
+            else
+            { <img width="150" height="150" src="@Url.Action("GetImage", "Car", new {id=item.CarId })" class="img-thumbnail">}
+        </td>
+        <td>
+            @Html.ActionLink("Удалить", "Delete", new { id=item.CarId })
+        </td>
+    </tr>
+}
+
+</table>

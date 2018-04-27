@@ -1,0 +1,29 @@
+﻿@model _60331_1_Volodko.Models.Cart
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ваша корзина</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Наименование</th>
+            <th>Модель</th>
+            <th>Количество</th>
+            <th>Общая цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GetItems())
+        {
+        <tr>
+            <td>@item.Car.CarBrand</td>
+            <td>@item.Car.CarModel</td>
+            <td>@item.Quantity</td>
+            <td>@(item.Car.Cost * item.Quantity) $</td>
+        </tr>}
+    </tbody>
+</table>
+ <a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
