@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace _60331_1_Volodko.Controllers
 {
@@ -15,12 +16,9 @@ namespace _60331_1_Volodko.Controllers
         {
             items = new List<MenuItem>
             {
-                new MenuItem{Name="Домой", Controller="Home",
-                Action="Index", Active=string.Empty},
-                new MenuItem{Name="Каталог", Controller="Car",
-                Action="List", Active=string.Empty},
-                new MenuItem{Name="Администрирование", Controller="Admin",
-                Action="Index", Active=string.Empty}
+                new MenuItem{Name="Домой", Controller="Home", Action="Index", Active=string.Empty},
+                new MenuItem{Name="Каталог", Controller="Car", Action="List", Active=string.Empty},
+                new MenuItem{Name = "Администрирование",Controller = "Admin",  Action = "Index", Active = string.Empty}
             };
         }
 

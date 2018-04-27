@@ -4,7 +4,20 @@
     <ul class="nav navbar-nav">
         @foreach (var item in Model)
         {
-            <li class="@item.Active">@Html.ActionLink(item.Name, item.Action, item.Controller)</li>
+            if (item.Controller == "Admin")
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("admin"))
+                    {
+                    <li class="@item.Active">@Html.ActionLink(item.Name, item.Action, item.Controller)</li>
+                    }
+                }
+            }
+            else
+            {
+                <li class="@item.Active">@Html.ActionLink(item.Name, item.Action, item.Controller)</li>
+            }
         }
     </ul>
 </div>

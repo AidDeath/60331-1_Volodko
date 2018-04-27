@@ -7,6 +7,7 @@ using _60331_1_Volodko.DAL;
 
 namespace _60331_1_Volodko.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         IRepository<Car> repository;

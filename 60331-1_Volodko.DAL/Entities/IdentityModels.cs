@@ -14,8 +14,12 @@ namespace _60331_1_Volodko.DAL
             // Обратите внимание, что authenticationType должен совпадать с типом, определенным в CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Здесь добавьте утверждения пользователя
+            userIdentity.AddClaim(new Claim("nick",this.NickName));
+
             return userIdentity;
         }
+
+        public string NickName { get; set; }
     }
 
     public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser>

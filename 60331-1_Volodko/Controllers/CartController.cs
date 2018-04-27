@@ -34,6 +34,7 @@ namespace _60331_1_Volodko.Controllers
         }
 
         // GET: Cart
+        [Authorize]
         public ActionResult Index(string returnUrl)
         {
             TempData["returnUrl"] = returnUrl;

@@ -70,6 +70,11 @@ namespace _60331_1_Volodko.Models
         public string Email { get; set; }
 
         [Required]
+        [MaxLength(20, ErrorMessage = "Не более 20 символов")]
+        [Display(Name = "Ваш НИК")]
+        public string NickName { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
