@@ -27,9 +27,9 @@ namespace _60331_1_Volodko.DAL
 
                 // Создаем пользователя
                 var userAdmin = new ApplicationUser {
-                    Email = "admin@mail.ru",
-                    UserName = "admin@mail.ru",
-                    NickName = "SuperHero" };
+                    Email = "admin@wssids.by",
+                    UserName = "admin@wssids.by",
+                    NickName = "WssIDs" };
 
                 userManager.CreateAsync(userAdmin, "123456").Wait();
 
