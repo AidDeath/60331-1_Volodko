@@ -13,12 +13,15 @@ namespace _60331_1_Volodko
                                         "~/Scripts/bootstrap.js",
                                         "~/Scripts/modernizr-*",
                                         "~/Scripts/respond.js",
-                                        "~/Scripts/jquery.unobtrusive-ajax.js"));
+                                        "~/Scripts/jquery.unobtrusive-ajax.js",
+                                        "~/Scripts/sweetalert.min.js"
+                                        ));
 
-            bundles.Add(new StyleBundle("~/bundles/styles").Include(
+                   bundles.Add(new StyleBundle("~/bundles/styles").Include(
                                         "~/Content/bootstrap.css",
                                         "~/Content/font-awesome.css",
-                                        "~/Content/mysite.css"));
+                                        "~/Content/mysite.css",
+                                        "~/Content/sweetalert.css"));
 
             //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
             //            "~/Scripts/jquery-{version}.js"));

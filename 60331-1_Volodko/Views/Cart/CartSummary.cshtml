@@ -1,5 +1,5 @@
 ﻿@model  _60331_1_Volodko.Models.Cart
 
 <ul class="nav navbar-nav">
-    <li><a href=@Url.Action("Index","Cart",new {returnUrl=Request.Path }) class="navbar-link"> @Model.GetTotal() $ ( @Model.GetItems().Sum(i => i.Quantity) ) <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+    <li><a href=@Url.Action("Index","Cart",new { returnUrl=Request.Path }) class="navbar-link"> @Model.GetTotal() $ ( @Model.GetItems().Sum(i => i.Quantity) ) <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 </ul>

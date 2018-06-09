@@ -5,6 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@{
+    if (TempData["removedСar"] != null)
+    {
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            var val;
+
+            $(function () {
+                val = '@TempData["removedCar"]';
+                swal("Удален из корзины", "@TempData["removedCar"]", "success");
+            })
+        </script>
+    }
+}
+
+
 <h2>Ваша корзина</h2>
 <table class="table table-striped">
     <thead>
@@ -13,17 +29,21 @@
             <th>Модель</th>
             <th>Количество</th>
             <th>Общая цена</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.GetItems())
         {
-        <tr>
-            <td>@item.Car.CarBrand</td>
-            <td>@item.Car.CarModel</td>
-            <td>@item.Quantity</td>
-            <td>@(item.Car.Cost * item.Quantity) $</td>
-        </tr>}
+            <tr>
+                <td>@item.Car.CarBrand</td>
+                <td>@item.Car.CarModel</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Car.Cost * item.Quantity) $</td>
+                <td>
+                    <a href=@Url.Action("RemoveFromCart", "Cart", new {id=item.Car.CarId, returnUrl=TempData["returnUrl"]} ) class="btn btn-danger">Удалить</a>
+                </td>
+            </tr>}
     </tbody>
 </table>
- <a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
+<a href="@TempData["returnUrl"]" class="btn btn-default">Вернуться к меню</a>
