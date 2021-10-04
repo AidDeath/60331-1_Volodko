@@ -96,8 +96,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Car.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\IdentityModels.cs" />
+    <Compile Include="Entities\Manufacturer.cs" />
+    <Compile Include="Entities\Purchase.cs" />
     <Compile Include="Entities\StoreContext.cs" />
+    <Compile Include="Entities\Sweet.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Migrations\201804271725004_InitialCreate.cs" />
     <Compile Include="Migrations\201804271725004_InitialCreate.Designer.cs">
@@ -110,6 +115,10 @@
     <Compile Include="Migrations\201804271815388_Nick.cs" />
     <Compile Include="Migrations\201804271815388_Nick.Designer.cs">
       <DependentUpon>201804271815388_Nick.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110040812445_classes added.cs" />
+    <Compile Include="Migrations\202110040812445_classes added.Designer.cs">
+      <DependentUpon>202110040812445_classes added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804271815388_Nick.resx">
       <DependentUpon>201804271815388_Nick.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110040812445_classes added.resx">
+      <DependentUpon>202110040812445_classes added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

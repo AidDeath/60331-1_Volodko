@@ -13,6 +13,18 @@ namespace _60331_1_Volodko.DAL
     {
         public DbSet<Car> Cars { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+            builder.Entity<Sweet>().Property(s=> s.Cost).HasPrecision(18, 2);
+            base.OnModelCreating(builder);
+        }
+
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Sweet> Sweets { get; set; }
+
         public void Populate()
         {
             if (!Roles.Any())
