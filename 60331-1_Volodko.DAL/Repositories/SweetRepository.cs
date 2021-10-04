@@ -10,10 +10,10 @@ namespace _60331_1_Volodko.DAL.Repositories
     {
         private ApplicationDbContext context;
         private DbSet<Sweet> table;
-        public SweetRepository(ApplicationDbContext context, DbSet<Sweet> table)
+        public SweetRepository(ApplicationDbContext context)
         {
             this.context = context;
-            this.table = table;
+            this.table = context.Sweets;
         }
         public IEnumerable<Sweet> GetAll()
         {

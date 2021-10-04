@@ -1,0 +1,31 @@
+﻿@model _60331_1_Volodko.DAL.Sweet
+
+    <div class='car-item col-md-12'>
+        <div class="thumbnail">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="caption">
+                        <div class="item-name">
+                            <h3>@Model.SweetsName <small>@Model.Manufacturer.ManufacturerName</small></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="@Url.Action("getImage",new {id=Model.SweetId })" class="img img-responsive" resource='#' alt='@Model.SweetsName' />
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="caption">
+                                <p>@Model.Description</p>
+                                <hr />
+                                <p><strong>Калорийность:</strong> @Model.CalorieContent кКал</p>
+                                <p><strong>Цена:</strong> @Model.Cost $</p>
+                                <a href=@Url.Action("AddToCart", "Cart", new {id=Model.SweetId, returnUrl=Request.Path} ) class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> В корзину</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>

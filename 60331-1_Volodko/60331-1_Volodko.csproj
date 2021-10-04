@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -306,6 +307,11 @@
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\CartSummary.cshtml" />
+    <Content Include="Views\Sweet\List.cshtml" />
+    <Content Include="Views\Sweet\ListPartial.cshtml" />
+    <Content Include="Views\Sweet\PagerPartial.cshtml" />
+    <Content Include="Views\Sweet\Side.cshtml" />
+    <Content Include="Views\Shared\ItemViewPartial2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

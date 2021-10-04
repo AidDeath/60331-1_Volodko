@@ -13,35 +13,68 @@ namespace _60331_1_Volodko
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //name: "",
+            //url: "Catalog",
+            //defaults: new
+            //{
+            //    controller = "Car",
+            //    action = "List",
+            //    page = 1,
+            //    group = (string)null
+            //});
+            //routes.MapRoute(
+            //name: "",
+            //url: "Catalog/page{page}",
+            //defaults: new
+            //{
+            //    controller = "Car",
+            //    action = "List",
+            //    group = (string)null
+            //},
+            //constraints: new { page = @"\d+" });
+            //routes.MapRoute(
+            //name: "",
+            //url: "Catalog/{group}",
+            //defaults: new
+            //{
+            //    controller = "Car",
+            //    action = "List",
+            //    page = 1
+            //});
+
+
             routes.MapRoute(
-            name: "",
-            url: "Catalog",
-            defaults: new
-            {
-                controller = "Car",
-                action = "List",
-                page = 1,
-                group = (string)null
-            });
+                name: "",
+                url: "Catalog",
+                defaults: new
+                {
+                    controller = "Sweet",
+                    action = "List",
+                    page = 1,
+                    group = (string)null
+                });
             routes.MapRoute(
-            name: "",
-            url: "Catalog/page{page}",
-            defaults: new
-            {
-                controller = "Car",
-                action = "List",
-                group = (string)null
-            },
-            constraints: new { page = @"\d+" });
+                name: "",
+                url: "Catalog/page{page}",
+                defaults: new
+                {
+                    controller = "Sweet",
+                    action = "List",
+                    group = (string)null
+                },
+                constraints: new { page = @"\d+" });
             routes.MapRoute(
-            name: "",
-            url: "Catalog/{group}",
-            defaults: new
-            {
-                controller = "Car",
-                action = "List",
-                page = 1
-            });
+                name: "",
+                url: "Catalog/{group}",
+                defaults: new
+                {
+                    controller = "Sweet",
+                    action = "List",
+                    page = 1
+                });
+
+
 
             routes.MapRoute(
             name: "",

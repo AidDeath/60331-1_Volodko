@@ -17,7 +17,7 @@ namespace _60331_1_Volodko.Controllers
             items = new List<MenuItem>
             {
                 new MenuItem{Name="Домой", Controller="Home", Action="Index", Active=string.Empty},
-                new MenuItem{Name="Каталог", Controller="Car", Action="List", Active=string.Empty},
+                new MenuItem{Name="Каталог", Controller="Sweet", Action="List", Active=string.Empty},
                 new MenuItem{Name = "Администрирование",Controller = "Admin",  Action = "Index", Active = string.Empty}
             };
         }

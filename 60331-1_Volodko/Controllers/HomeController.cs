@@ -13,11 +13,7 @@ namespace _60331_1_Volodko.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            SelectList Colors = new SelectList(
-                Enum.GetValues(typeof(System.Drawing.KnownColor)));
-
-            ViewBag.Colors = Colors;
-            ViewBag.Caption = Request.QueryString["Colors"] ?? "Лабораторная работа №2";
+            ViewBag.Caption = "Контрольная работа, Иокша Д.А.";
 
             return View();
         }

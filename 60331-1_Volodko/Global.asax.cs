@@ -8,6 +8,7 @@ using System.Web.Routing;
 using Ninject;
 using Ninject.Web.Common.WebHost;
 using _60331_1_Volodko.DAL;
+using _60331_1_Volodko.DAL.Repositories;
 
 namespace _60331_1_Volodko
 {
@@ -26,6 +27,7 @@ namespace _60331_1_Volodko
         {
             IKernel kernel = new StandardKernel();
             kernel.Bind<IRepository<Car>>().To<EFCarRepository>();
+            kernel.Bind<IRepository<Sweet>>().To<SweetRepository>();
             return kernel;
         }
     }

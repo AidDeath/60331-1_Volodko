@@ -1,0 +1,15 @@
+﻿@model _60331_1_Volodko.Models.PageListViewModel<_60331_1_Volodko.DAL.Sweet>
+@using System.Text;
+@{
+    ViewBag.Title = "Каталог вкусняшек";
+}
+
+<h2>Каталог</h2>
+<div id="List">
+    @Html.Partial("ListPartial", Model);
+</div>
+
+@section SidePanel
+{
+    @Html.Action("Side", "Sweet")
+}
