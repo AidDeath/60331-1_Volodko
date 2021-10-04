@@ -8,6 +8,8 @@ using System.Web.Routing;
 using Ninject;
 using Ninject.Web.Common.WebHost;
 using _60331_1_Volodko.DAL;
+using _60331_1_Volodko.Models;
+using _60331_1_Volodko.Binders;
 using _60331_1_Volodko.DAL.Repositories;
 
 namespace _60331_1_Volodko
@@ -22,6 +24,8 @@ namespace _60331_1_Volodko
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
         protected override IKernel CreateKernel()
         {

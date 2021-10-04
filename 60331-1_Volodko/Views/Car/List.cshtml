@@ -5,9 +5,28 @@
 }
 
 <h2>Каталог</h2>
+
 <div id="List">
     @Html.Partial("ListPartial", Model);
 </div>
+
+@{
+    if (TempData["addedСar"] != null)
+    {
+
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+
+            var val;
+
+            $(function () {
+                val = '@TempData["addedCar"]';
+                swal("Добавлен в корзину", val, "success");
+            })
+        </script>
+    }
+}
+
 
 @section SidePanel
 {
