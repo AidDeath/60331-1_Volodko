@@ -33,7 +33,7 @@ namespace _60331_1_Volodko.DAL
 
         [Required]
         [Display(Name = "Калорийность")]
-        [Range(minimum: 500, maximum: 5000)]
+        [Range(minimum: 1, maximum: 5000)]
         public int CalorieContent { get; set; }
 
         [Required]
