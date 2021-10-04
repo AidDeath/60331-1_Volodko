@@ -10,9 +10,9 @@ namespace _60331_1_Volodko.Controllers
 {
     public class CartController : Controller
     {
-        IRepository<Car> repository;
+        IRepository<Sweet> repository;
 
-        public CartController(IRepository<Car> repo)
+        public CartController(IRepository<Sweet> repo)
         {
             repository = repo;
         }

@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th>Наименование</th>
-            <th>Модель</th>
+            <th>Производитель</th>
             <th>Количество</th>
             <th>Общая цена</th>
         </tr>
@@ -19,10 +19,10 @@
         @foreach (var item in Model.GetItems())
         {
         <tr>
-            <td>@item.Car.CarBrand</td>
-            <td>@item.Car.CarModel</td>
+            <td>@item.Sweet.SweetsName</td>
+            <td>@item.Sweet.Manufacturer.ManufacturerName</td>
             <td>@item.Quantity</td>
-            <td>@(item.Car.Cost * item.Quantity) $</td>
+            <td>@(item.Sweet.Cost * item.Quantity) $</td>
         </tr>}
     </tbody>
 </table>

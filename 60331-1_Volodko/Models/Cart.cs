@@ -16,22 +16,22 @@ namespace _60331_1_Volodko.Models
         /// Добавить в корзину
         /// </summary>
         /// <param name="car">объект для добавления</param> 
-        public void AddItem(Car car)
+        public void AddItem(Sweet sweet)
         {
-            if (cartItems.ContainsKey(car.CarId))
-                cartItems[car.CarId].Quantity += 1;
-            else cartItems.Add(car.CarId, new CartItem { Car = car, Quantity = 1 });
+            if (cartItems.ContainsKey(sweet.SweetId))
+                cartItems[sweet.SweetId].Quantity += 1;
+            else cartItems.Add(sweet.SweetId, new CartItem { Sweet = sweet, Quantity = 1 });
         } 
         
         /// <summary>
         /// Удалить из корзины
         /// </summary>
         /// <param name="car">Объект для удаления</param> 
-        public void RemoveItem(Car car)
+        public void RemoveItem(Sweet sweet)
         {
-            if (cartItems[car.CarId].Quantity == 1)
-                cartItems.Remove(car.CarId);
-            else cartItems[car.CarId].Quantity -= 1;
+            if (cartItems[sweet.SweetId].Quantity == 1)
+                cartItems.Remove(sweet.SweetId);
+            else cartItems[sweet.SweetId].Quantity -= 1;
         } 
         /// <summary>
         /// Очистить корзину 
@@ -47,7 +47,7 @@ namespace _60331_1_Volodko.Models
         /// <returns></returns>
         public decimal GetTotal()
         {
-            return cartItems.Values.Sum(i => i.Car.Cost * i.Quantity);
+            return cartItems.Values.Sum(i => i.Sweet.Cost * i.Quantity);
         }
         
         /// <summary>

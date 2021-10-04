@@ -4,7 +4,7 @@ namespace _60331_1_Volodko.Models
 {
     public class CartItem
     {
-        public Car Car { get; set; }
+        public Sweet Sweet { get; set; }
         public decimal Quantity { get; set;}
     }
 }
